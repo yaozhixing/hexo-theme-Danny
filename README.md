@@ -63,13 +63,6 @@ permalink: :category/:title/
 permalink_defaults:
   lang: en
 ```
-这里还有其他文件配置信息，可根据自己需求设置：
-header-img:  首页banner图片地址
-article-img: 文章默认背景图片
-404-img:  404 图片地址
-signature: false #show signature
-signature-img: img/signature/BeanTechSign-white.png
-theme: 采用什么博客主题，文件夹名称
 
 ##### 2、设置首页banner图片地址
 ```

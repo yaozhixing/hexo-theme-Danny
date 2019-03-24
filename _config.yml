@@ -220,10 +220,8 @@ sitemap:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-# repository: https://github.com/huweihuang/xxxxxxx.github.io.git
-# branch: master
 deploy:
   type: git
   repository: git@github.com:yaozhixing/yaozhixing.github.io.git
   branch: master
-  message: banner图更换远程地址
+  message: hexo-theme-Danny

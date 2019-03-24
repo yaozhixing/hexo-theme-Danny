@@ -1,4 +1,4 @@
-##[hexo] hexo-theme-Danny 
+## [hexo] hexo-theme-Danny 
 
 >这个由Danny创作的Danny主题，是从原来的 [HuWeihuang](https://www.huweihuang.com/)和 [YenYuHsuan](http://beantech.org/) 改编而来的。
 

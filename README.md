@@ -1,125 +1,145 @@
-> This HuWeihuang theme created by [HuWeihuang](http://www.huweihuang.com/) modified from the original Porter [YuHsuan](https://github.com/YenYuHsuan/hexo-theme-beantech)
-> 
-> This theme has been published to the [hexo theme list](https://hexo.io/themes/).
+##[hexo] hexo-theme-Danny 
 
-# Live Demo
+>这个由Danny创作的Danny主题，是从原来的 [HuWeihuang](https://www.huweihuang.com/)和 [YenYuHsuan](http://beantech.org/) 改编而来的。
 
-Hu Weihuang Blog : [www.huweihuang.com](http://www.huweihuang.com/)
+### Demo
 
-![Theme_HuWeihuang](http://ozilwgpje.bkt.clouddn.com/blog.jpg)
+Danny Blog : [https://yaozhixing.github.io/](https://yaozhixing.github.io/)
 
-# Copyright Notice
+首页截图↓：
+![enter image description here](http://po4ucl8b6.bkt.clouddn.com/post02_01.png)
 
-**You can free to use this theme, but you need to keep the following copyright notice on the website.**
+归档↓：
+![enter image description here](http://po4ucl8b6.bkt.clouddn.com/post02_02.png)
 
-<img src="https://res.cloudinary.com/dqxtn0ick/image/upload/v1537879475/header/copyright.png" width="55%">
+Tags标签↓：
+![enter image description here](http://po4ucl8b6.bkt.clouddn.com/post02_03.png)
 
-# Install Hexo
+关于我↓：
+![enter image description here](http://po4ucl8b6.bkt.clouddn.com/post02_04.png)
 
-Install Node.js  and Git
+博文示例↓：
+![enter image description here](http://po4ucl8b6.bkt.clouddn.com/post02_05.png)
 
-```shell
-#For Mac
-brew install node
-brew install git
+----------
+
+
+### Install Hexo
+首先必须安装 Node.js 和Git 工具，这里就不在详细出教程了。
+
+安装 hexo
 ```
-
-Install hexo
-
-```shell
 npm install hexo-cli -g
-
-#For more:https://hexo.io/zh-cn/index.html
 ```
-
-# Theme Usage
-
-## Init
-
-```bash
-git clone https://github.com/huweihuang/hexo-theme-huweihuang.git ./hexo-huweihuang
-cd hexo-huweihuang
+### 使用方法
+```
+git clone 
+cd hexo-Theme-Danny
 npm install
+hexo s
+```
+hexo s 运行一下，打开浏览器：[http://localhost:4000/](http://localhost:4000/)   看看主题效果。(#^.^#)
+
+----------
+
+
+### 修改配置
+修改  ``_config.yml`` 文件，配置自己需要的文件信息。
+修改配置信息文件如下：
+
+##### 1、站点配置信息
+```
+# Site
+title: Danny Blog
+subtitle: 每天多努力一点，进步就多一点
+author: Danny
+language:
+timezone:
+
+url: https://yaozhixing.github.io/       
+root: /
+#permalink: :year/:month/:day/:title/
+permalink: :category/:title/
+permalink_defaults:
+  lang: en
+```
+这里还有其他文件配置信息，可根据自己需求设置：
+header-img:  首页banner图片地址
+article-img: 文章默认背景图片
+404-img:  404 图片地址
+signature: false #show signature
+signature-img: img/signature/BeanTechSign-white.png
+theme: 采用什么博客主题，文件夹名称
+
+##### 2、设置首页banner图片地址
+```
+header-img: /img/header_img/home.jpg
 ```
 
-## Modify
-Modify `_config.yml` file with your own info.
-Especially the section:
-### Deployment
-Replace to your own repo!
-```yml
+##### 3、设置博文的默认banner图片地址
+```
+article-img: /img/article_header/article_bg.jpg
+```
+
+##### 4、设置github账户连接名称
+```
+github_username:    yaozhixing
+```
+
+##### 5、侧边栏设置
+```
+sidebar: true    
+sidebar-about-description: "<your description>"
+sidebar-avatar: /img/avatar/myAvatar.jpg 	#头像
+```
+
+##### 6、开启评论插件
+本博客为例，采用来必力社区评论，请先去[来必力](https://www.livere.com/)申请账号，获取账号复制到这里
+```
+livere_uid:  xxxxx
+```
+
+##### 7、Deployment选项
+``很重要`` ``很重要`` ``很重要``, 请正确配置，如果不会，请看上一节 [ [hexo]搭建github个人博客 基础入门（一）](https://yaozhixing.github.io/article/hexo-%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/)
+```
 deploy:
   type: git
-  repo: https://github.com/<yourAccount>/<repo>
-  branch: <your-branch>
+  repository: git@github.com:yaozhixing/yaozhixing.github.io.git
+  branch: master
+  message: hexo init
 ```
+type：提交方式采用git
+repository： 远程仓库的https地址和ssh的地址，我这里采用ssh地址，可根据上一节教程配置本地公钥，在github的添加公钥上去，就可以一件提交
+branch： 远程地址提交的分支
+message： 每次提交的提交说明
 
-### Sidebar settings
-Copy your avatar image to `<root>/img/` and modify the `_config.yml`:
-```yml
-sidebar: true    # whether or not using Sidebar.
-sidebar-about-description: "<your description>"
-sidebar-avatar: img/<your avatar path>
-```
-and activate your personal widget you like
-```yml
-widgets:         # here are widget you can use, you can comment out
-- featured-tags
-- short-about
-- recent-posts
-- friends-blog
-- archive
-- category
-```
-if you want to add sidebar widget, please add at `layout/_widget`.
-### Signature Setup
-Copy your signature image to `<root>/img/signature` and modify the `_config.yml`:
-```yml
-signature: true   # show signature
-signature-img: img/signature/<your-signature-ID>
-```
-### Go to top icon Setup
-My icon is using iron man, you can change to your own icon at `css/image`.
+----------
+
 
 ### Post tag
-You can decide to show post tags or not.
-```yml
+设置博文是否显示post标签。
+```
 home_posts_tag: true
 ```
- ![tag](https://raw.githubusercontent.com/huweihuang/hexo-theme-huweihuang/master/source/img/article/tag.png)
-### Markdown render
-My markdown render engine plugin is [hexo-renderer-markdown-it](https://github.com/celsomiranda/hexo-renderer-markdown-it).
-```yml
-# Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-```
-and if you want to change the header anchor 'ℬ', you can go to `layout/post.ejs` to change it.
-```javascript
-async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: ℬ // this is the header anchor "unicode" icon
-        };
-```
 
-## Hexo Basics
-Some hexo command:
-```bash
-hexo new post "<post name>" # you can change post to another layout if you want
-hexo clean && hexo generate # generate the static file
-hexo server # run hexo in local environment
-hexo deploy # hexo will push the static files automatically into the specific branch(gh-pages) of your repo!
-```
 
-# Have fun ^_^ 
-Please <a class="github-button" href="https://github.com/huweihuang/hexo-theme-huweihuang" data-icon="octicon-star" aria-label="Star huweihuang/hexo-theme-huweihuang on GitHub">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/huweihuang" aria-label="Follow @huweihuang on GitHub">Follow</a> would also be appreciated!
-Peace!
+----------
+
+
+### Hexo 基础语法
+
+- 新建博文： hexo new post  "xxx"
+- 清空静态缓存文件： hexo clean 
+- 生成静态文件： hexo generate （简写： hexo g）
+- 启动本地服务器： hexo server （简写：hexo s）
+- 提交服务： hexo deploy （简写：hexo d）
+
+
+----------
+### 点亮Star
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Place this tag where you want the button to render. -->
+
+如果您喜欢这篇hexo主题，就请赞一个 <a class="github-button" href="https://github.com/yaozhixing/yaozhixing.github.io" data-icon="octicon-star" aria-label="Star yaozhixing/yaozhixing.github.io on GitHub">Star</a> 小星星！  可以关注我的github账户，来吧，一起相互学习吧~<a class="github-button" href="https://github.com/yaozhixing" aria-label="Follow @yaozhixing on GitHub">Follow</a> 
